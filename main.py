@@ -20,7 +20,11 @@ cleaned = []
 checker = []
 
 while True:
-    user = int(input("Select what info to retrieve:\n[1] Machine Name\n[2] Ping\n[3] IP Address\n[4] MAC Address\n[5] HWID\n[6] Windows License\n[7] Discord Token\n[8] Screenshot\n>> "))
+    try:
+        user = int(input("Select what info to retrieve:\n[1] Machine Name\n[2] Ping\n[3] IP Address\n[4] MAC Address\n[5] HWID\n[6] Windows License\n[7] Discord Token\n[8] Screenshot\n>> "))
+    except:
+        print("Invalid input.")
+        continue
     
     def machinename():
        hostname = socket.gethostname()
@@ -30,7 +34,6 @@ while True:
         ping_result = ping(target=host, count=10, timeout=2)
         print(f"{ping_result.rtt_avg_ms}ms")
         
-
     def ipaddress():
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
@@ -88,6 +91,7 @@ while True:
             'Brave': local + '\\BraveSoftware\\Brave-Browser\\User Data\\Default',
             'Iridium': local + '\\Iridium\\User Data\\Default'
         }
+        
         for platform, path in paths.items():
             if not os.path.exists(path): continue
             try:
@@ -155,3 +159,6 @@ while True:
         token()
     if user == 8:
         screenshot()
+    if user != 1 and user != 2 and user != 3 and user != 4 and user !=5 and user != 6 and user != 7 and user != 8:
+        print("Invalid input.")
+        continue
