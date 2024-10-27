@@ -9,6 +9,12 @@ This is strictly for educational purposes. By using it you agree that you will N
 
 ## How to use it?
 
-In order to use it, download the following libraries and run the python script.|
+|In order to use it, download the following libraries and run the python script.|
 |-------------------------------------------------|
 requests, psutil, pillow, pycryptodome, pypiwin32, pythonping
+
+## Credits:
+
+|Some code is from AstraaDev's Discord Token Grabber V2|
+|-------------------------------------------------|
+https://github.com/AstraaDev/Discord-Token-Grabber-V2
